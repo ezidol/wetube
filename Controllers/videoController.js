@@ -1,16 +1,11 @@
-<<<<<<< HEAD
 import { videos } from "../db";
 export const home = (req, res) => res.render("home", { pageTitle: "Home", videos });
-export const search = (req, res) => res.render("search", { pageTitle: "Home" });
-=======
-export const home = (req, res) => res.render("home", { pageTitle: "Home" });
 export const search = (req, res) =>{
-    const {query: {term: searchingBy }} =req;
-    res.render("search", { pageTitle: "Home", searchingBy });
+    const {
+        query: {term: searchingBy }
+    } = req;
+    res.render("search", { pageTitle: "Home", searchingBy, videos });
 }
- 
-export const videos = (req, res) => res.send("videos");
->>>>>>> ea8e4a5fa86b5f1d71f599c4e4b9a657a78335bc
 export const upload = (req, res) => res.render("upload", { pageTitle: "Upload" });
 export const videoDetail = (req, res) => res.render("videoDetail", { pageTitle: "Video Detail" });
 export const editVideo = (req, res) => res.render("editVideo", { pageTitle: "Edit video" });
